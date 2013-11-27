@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>示例</title>
+    <style type="text/css">
+    *{margin:0;padding:0;}
+    #box{width:100%;}
+    #box div{float:left;width:100%;}
+
+
+.wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius:150px;
+}
+
+.wrapper, .wrapper * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width:300px;height:300px;
+  background:#fff;
+}
+
+.pie {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  -webkit-transform-origin: 100% 50%;
+  background: #f60
+}
+
+.spinner {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  z-index: 200;
+  /*background:-webkit-linear-gradient(80deg,red,green);*/
+  -webkit-transform: rotate(0deg); 
+
+}
+
+
+.filler {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  -webkit-transform: rotate(0deg); 
+  left: 50%;
+  opacity: 1;
+  z-index: 100;
+  -webkit-transform-origin:0;
+  /*background:-webkit-linear-gradient(80deg,red,green)*/
+}
+.maskleft{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+    border-radius:100% 0 0 100% / 50% 0 0 50%;
+    
+  
+  left: 0;
+  opacity: 1;
+  z-index: 180;
+  background:#fff
+}
+
+.mask {
+  position: absolute;
+  width: 100px;
+  height:100px;
+  left:100px;
+  top:100px;
+
+  background: #fff;
+  border-radius:50px;
+  opacity: 1;
+  z-index: 300;
+}
+
+
+
+
+
+
+@-webkit-keyframes rotate {
+  0% {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes opacity {
+  0% {opacity: 1;}
+  50%, 100% {opacity: 0;}
+}
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+      <div class="wrapper">
+        <div class="spinner pie spinner_animate"></div>
+        <div class="filler pie filler_animate"></div>
+        <div class="maskleft"></div>
+        <div class="mask mask_animate"></div>
+      </div>
+
+    </div>
+
+
+    <div style="width:100%;overflow:hidden;background:none;margin:0 auto;">
+        <div id="box">
+            <div id="a3" style="height:200px;background:#E53E38;">1</div>
+            <div id="a1" style="height:200px;background:#4CB849;">2</div>
+            <div id="a2" style="height:200px;background:#FCD20A;">4</div>
+            <div id="a4" style="height:200px;background:#1A6EEF;">5</div>
+        </div>
+    </div>
+        
+
+    <script type="text/javascript" src="script/ptouch.js"></script>
+</body>
+
+</html>
